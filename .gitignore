@@ -1,0 +1,44 @@
+# Python cache and virtual environments
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+*.pklz
+*.egg-info/
+.env
+.venv/
+venv/
+ENV/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Excel temporary files
+~$*.xlsx
+
+# Power BI temporary or autosave files
+*.tmp.pbix
+*.pbit.autosave
+
+# Data files (if you don’t want to commit raw data)
+data/raw/*
+!data/top_30_mutual_funds.xlsx   # keep only final curated dataset
+
+# Dashboard files
+dashboard/*.pbix
+!dashboard/Dashboard.png   # keep only the preview image
