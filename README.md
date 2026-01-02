@@ -1,149 +1,108 @@
-# Mutual Fund Performance Analysis
+# Mutual Fund Performance Analysis (Exploratory)
 
 ## Project Overview
-This project evaluates over 2,500 mutual fund schemes to identify optimal investment opportunities using quantitative risk–return methodologies. Through systematic data processing, statistical analysis, and a custom scoring algorithm, I ranked and filtered funds to deliver a curated list of 30 high-performing, low-risk schemes. The analysis is presented in an interactive Power BI dashboard that converts complex financial data into actionable insights.
+This project is an exploratory data analysis of Indian mutual fund schemes using publicly available data.  
+The objective was to understand how returns, volatility, expense ratios, and fund maturity interact, and to build a simple, transparent framework to compare funds on a risk–return basis.
 
-**Key Achievement**: Reduced the investment universe by 98.8% while maintaining superior risk-adjusted returns.
-
----
-
-## Project at a Glance
-- **Dataset**: 2,500+ mutual fund schemes with 15+ financial variables  
-- **Tools**: Python (Pandas, scikit-learn), Excel, Power BI  
-- **Output**: Top 30 funds ranked for risk–return balance  
-- **Impact**: Evidence-based framework supporting investors, advisors, and institutions  
+The focus of this project is on structured analysis, clear assumptions, and interpretability rather than complex optimization or predictive modeling.
 
 ---
 
 ## Objectives
-**Primary Objective**: Identify mutual fund schemes with optimal risk–return profiles to enable data-driven investment decisions.
+- Explore risk–return characteristics across a large set of mutual funds  
+- Compare funds using interpretable financial metrics  
+- Build a rule-based scoring framework to rank funds under different assumptions  
+- Present insights in a clear and decision-friendly format  
 
-**Supporting Objectives**:
-- Develop a scalable quantitative scoring framework  
-- Generate actionable insights from complex datasets  
-- Build interactive tools for ongoing performance monitoring  
-- Demonstrate measurable business impact through systematic analysis  
+This project was developed as a learning and research exercise and is not intended as a production or trading system.
+
+---
+
+## Dataset
+- Approximately 2,500 mutual fund schemes  
+- Publicly available historical performance and fund-level data  
+- Variables include returns over different horizons, expense ratios, fund category, and basic risk indicators  
 
 ---
 
 ## Methodology
 
-### End-to-End Data Analysis Pipeline
-**Phase 1: Data Acquisition and Exploration**
-- Collected dataset of 2,500+ mutual fund schemes with 15+ variables  
-- Conducted exploratory analysis to assess data quality and patterns  
-- Established governance protocols for analytical consistency  
+### 1. Data Exploration
+- Examined distributions of returns, expenses, and fund categories  
+- Identified missing values and inconsistencies  
+- Performed basic descriptive and correlation analysis  
 
+### 2. Data Cleaning
+- Handled missing values and outliers using simple, explainable rules  
+- Standardized numeric metrics to enable fair comparison  
+- Ensured consistency across fund categories  
 
-**Phase 2: Data Cleaning and Transformation**
-- Addressed missing values, outliers, and inconsistencies  
-- Standardized financial metrics across formats  
-- Achieved 99.7% completeness across performance variables  
+### 3. Feature Construction
+- Used existing performance metrics such as returns and expense ratios  
+- Derived simple comparative measures like volatility-adjusted returns  
+- Prioritized interpretability over complexity  
 
-**Phase 3: Statistical Analysis and Feature Engineering**
-- Generated descriptive statistics and correlation analysis  
-- Normalized data with MinMaxScaler for fair comparisons  
-- Created derived features such as volatility-adjusted returns  
+### 4. Scoring Framework (Rule-Based)
+Funds were compared using a weighted scoring approach based on intuitive financial considerations:
+- Longer-term performance (returns)  
+- Cost efficiency (expense ratio)  
+- Consistency of positive performance  
+- Fund maturity / experience  
 
-**Phase 4: Scoring Algorithm Development**
-Weighted model optimized for:
-- Long-term performance (3-year returns, 40%)  
-- Cost efficiency (expense ratio, 25%)  
-- Consistency (positive returns across periods, 20%)  
-- Fund maturity (experience factor, 15%)  
+Weights were chosen heuristically to reflect risk–return trade-offs.  
+Results were reviewed under different weight assumptions to understand sensitivity.
 
-**Phase 5: Validation and Selection**
-- Applied algorithm across full dataset  
-- Performed cross-validation and sensitivity analysis  
-- Selected top 30 funds representing optimal balance of risk and return  
+> This framework is intended for comparative analysis and learning, not for prediction or live deployment.
 
 ---
 
 ## Tools and Technologies
-
-| Technology     | Application                                   |
-|----------------|-----------------------------------------------|
-| **Python**     | Statistical analysis, scoring algorithm       |
-| **Pandas**     | Data manipulation and transformation          |
-| **Scikit-learn** | Normalization and preprocessing             |
-| **Excel**      | Validation, supplementary reporting           |
-| **Power BI**   | Interactive dashboard and visualization       |
+- **Python:** Pandas for data manipulation and analysis  
+- **Scikit-learn:** Basic preprocessing (scaling)  
+- **Excel:** Validation and supplementary analysis  
+- **Power BI:** Interactive dashboard and visualization  
 
 ---
 
-## Key Insights
+## Key Observations
+- Expense ratios vary significantly across fund categories and impact long-term outcomes  
+- Certain funds deliver comparable returns with lower volatility and costs  
+- Simple, transparent rules can effectively narrow a large investment universe for further analysis  
 
-**Market Structure**
-- Equity funds dominate with ₹1.35 trillion AUM (68% market share)  
-- Index funds are most cost-efficient at 0.26% average expense ratio  
-- Top quartile funds deliver 14.4% annualized returns with lower volatility  
-
-**Risk–Return Optimization**
-- Selected equity funds: 37.84% three-year average returns (vs. 28.6% category)  
-- Hybrid funds: 14.25% returns with 40% lower volatility  
-- Portfolio reduced average expense ratios by 32%  
-
-**Investment Accessibility**
-- SIP minimum: ₹528.50/month, supporting broad participation  
-- Lump sum median: ₹3,050, ensuring low entry barriers  
-- Leading fund manager oversees ₹7.3 trillion AUM  
+These observations are illustrative and based on historical data.
 
 ---
 
-## Dashboard and Visualization
-The Power BI dashboard includes:
-- **Advanced Filtering**: Fund type, category, AMC, risk level, rating  
-- **Executive KPIs**: Asset allocation, SIP vs. lump sum, expense ratios, long-term returns  
-- **Fund Manager Analysis**: Rankings by AUM and performance  
-- **Automated Insights**: Dynamic cards highlighting trends and recommendations  
+## Dashboard
+An interactive Power BI dashboard was created to:
+- Filter funds by category, risk level, and performance  
+- Compare key metrics such as returns and expense ratios  
+- Summarize insights visually for easier interpretation  
 
-- [Download Dashboard (.pbix)](/dashboard/Mutual_Fund_Dashboard.pbix) 
- 
-#### Dashboard Preview :
-
-  ![Dashboard Preview](/dashboard/Dashboard.png)
-- **Description**: Static preview of the dashboard for quick review      
-- **Application**: Executive summary and stakeholder presentations 
-
-## Business Impact
-
-**For Individual Investors**
-- 73% improvement in risk-adjusted returns  
-- 32% reduction in average fees  
-- Decision-making time reduced from weeks to minutes  
-
-**For Financial Advisors**
-- Defensible, transparent recommendations  
-- Scalable framework for diverse clients  
-- Clear documentation supporting compliance  
-
-**For Institutions**
-- Framework adaptable to large-scale allocation decisions  
-- Enhanced diversification and reduced concentration risk  
-- Ongoing monitoring through systematic fund evaluation  
+The dashboard is intended for exploration and learning rather than automated decision-making.
 
 ---
 
-## Technical Architecture
-- **Extract**: Data ingestion with validation checks  
-- **Transform**: Cleaning, statistical analysis, scoring model  
-- **Load**: Processed dataset integrated into Power BI  
-- **Monitor**: Automated QA, significance testing, back-testing  
-
----
-
-## Deliverables
-
-| Deliverable | Description | Application |
-|-------------|-------------|-------------|
-| [Optimized Fund Selection](/data/top_30_mutual_funds.xlsx) | Curated list of top 30 mutual funds with analytical scores | Direct investment analysis and selection |
-| [Interactive Dashboard](/dashboard/Dashboard.pbix) | Power BI file with interactive analytics and KPIs | Ongoing performance tracking and monitoring |
-| [Dashboard Preview](/dashboard/Dashboard.png) | Static visualization of the dashboard | Executive summary and stakeholder communication |
-
+## Limitations
+- Analysis is based solely on historical, publicly available data  
+- Transaction costs, taxes, and real-time constraints are not considered  
+- No predictive modeling or live performance testing  
+- Results depend on chosen assumptions and weights  
 
 ---
 
 ## Conclusion
-This project demonstrates how structured data analysis can transform subjective investment choices into objective, evidence-based strategies. By combining Python-based analytics with interactive Power BI dashboards, I delivered a replicable framework that improves returns, reduces costs, and simplifies decision-making for diverse stakeholders.
+This project demonstrates how structured data analysis and simple quantitative reasoning can support financial evaluation in a transparent and interpretable manner.
 
-The work reflects core skills in data cleaning, statistical analysis, algorithm development, visualization, and business intelligence.
+The focus was on:
+- Data cleaning and exploration  
+- Clear assumptions  
+- Practical risk–return thinking  
+- Effective communication of insights  
+
+This work reflects my interest in quantitative analysis, financial research, and decision-oriented analytics, and serves as a foundation for deeper learning.
+
+---
+
+## Disclaimer
+This project is for educational and analytical purposes only and does not constitute investment advice.
